@@ -1,8 +1,9 @@
-package com.example.labslocaliza
+package com.example.labslocaliza.view
 
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import com.example.labslocaliza.MoviesAdapter
 import com.example.labslocaliza.databinding.ActivityMovieListBinding
 
 class MovieList : AppCompatActivity() {

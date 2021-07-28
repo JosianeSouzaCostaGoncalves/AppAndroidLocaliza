@@ -1,4 +1,4 @@
-package com.example.labslocaliza
+package com.example.labslocaliza.view
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
