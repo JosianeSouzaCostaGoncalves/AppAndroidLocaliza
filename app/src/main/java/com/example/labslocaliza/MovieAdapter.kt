@@ -7,7 +7,7 @@ import com.example.labslocaliza.databinding.MovieItemBinding
 
 class MoviesViewHolder(val binding: MovieItemBinding) : RecyclerView.ViewHolder(binding.root)
 
-class MoviesAdapter(val onMovieClick:()-> Unit) : RecyclerView.Adapter<MoviesViewHolder>() {
+class MoviesAdapter(val onMovieClick: () -> Unit) : RecyclerView.Adapter<MoviesViewHolder>() {
     val movieList: MutableList<String> = mutableListOf()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MoviesViewHolder {

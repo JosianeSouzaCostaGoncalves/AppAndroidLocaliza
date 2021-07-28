@@ -12,8 +12,8 @@ class MovieList : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         binding = ActivityMovieListBinding.inflate(layoutInflater)
         setContentView(binding.root)
-        val adapter = MoviesAdapter(){
-            val pulaTela = Intent(this,MainActivity::class.java)
+        val adapter = MoviesAdapter() {
+            val pulaTela = Intent(this, MainActivity::class.java)
             startActivity(pulaTela)
         }
         binding.movie.adapter = adapter

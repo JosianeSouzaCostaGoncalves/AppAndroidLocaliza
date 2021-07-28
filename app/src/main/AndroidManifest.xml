@@ -10,7 +10,8 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.LabsLocaliza">
         <activity android:name=".MainActivity" />
-        <activity android:name=".MovieList">
+        <activity android:name=".MovieList" />
+        <activity android:name=".PrincipalMovie">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
