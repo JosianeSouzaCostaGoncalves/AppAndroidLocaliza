@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools">
+
+    <data>
+
+        <variable
+            name="titulo"
+            type="String" />
+
+        <variable
+            name="sinopse"
+            type="String" />
+    </data>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="#DCDCDC">
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/imagem_id"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:scaleType="fitXY"
+            app:srcCompat="@drawable/la_casa_de_papel_2"
+            tools:ignore="MissingConstraints" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/nome_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="15dp"
+            android:text="La casa de papel"
+            android:textColor="@color/black"
+            android:textSize="30sp"
+            android:textStyle="bold"
+            app:layout_constraintTop_toBottomOf="@id/imagem_id"
+
+            />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/ano_id"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/border_radius"
+            android:padding="8sp"
+            android:text="2020"
+            android:textColor="@color/black"
+            android:textSize="10sp"
+            app:layout_constraintStart_toStartOf="@id/nome_id"
+            app:layout_constraintTop_toBottomOf="@id/nome_id" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/classificacao_id"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/border_radius"
+            android:padding="8sp"
+            android:text="16"
+            android:textColor="@color/black"
+            android:textSize="10sp"
+            app:layout_constraintStart_toEndOf="@+id/ano_id"
+            app:layout_constraintTop_toBottomOf="@id/nome_id"
+            tools:background="@android:color/transparent" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/descricao_id"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/border_radius"
+            android:padding="8sp"
+            android:text="Série"
+            android:textColor="@color/black"
+            android:textSize="10sp"
+            app:layout_constraintStart_toEndOf="@id/classificacao_id"
+            app:layout_constraintTop_toBottomOf="@id/nome_id" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/temporadas_id"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/border_radius"
+            android:padding="8sp"
+            android:text="4 Partes"
+            android:textColor="@color/black"
+            android:textSize="10sp"
+            app:layout_constraintStart_toEndOf="@id/descricao_id"
+            app:layout_constraintTop_toBottomOf="@id/nome_id" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/genero_id"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="8dp"
+            android:background="@drawable/border_radius"
+            android:padding="8sp"
+            android:text="Drama Policial"
+            android:textColor="@color/black"
+            android:textSize="10sp"
+            app:layout_constraintStart_toEndOf="@id/temporadas_id"
+            app:layout_constraintTop_toBottomOf="@id/nome_id" />
+
+        <androidx.appcompat.widget.AppCompatTextView
+            android:id="@+id/sinopse_id"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="8dp"
+            android:layout_marginEnd="15dp"
+            android:background="@drawable/border_radius"
+            android:padding="8sp"
+            android:text="  Oito ladrões se trancam com reféns na casa da Moeda da Espanha. Seu líder manipula a polícia para realizar um plano. Será o maior roubo da história, ou uma missão em vão?"
+            android:textColor="@color/black"
+            app:layout_constraintTop_toBottomOf="@+id/ano_id" />
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</layout>
