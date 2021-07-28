@@ -7,7 +7,7 @@
 
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:background="#DCDCDC">
+        android:background="@color/pink">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/movie"
