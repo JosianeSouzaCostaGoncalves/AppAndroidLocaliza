@@ -1,14 +1,16 @@
-package com.example.labslocaliza
+package com.example.labslocaliza.view
 
 import android.view.LayoutInflater
 import android.view.ViewGroup
 import androidx.recyclerview.widget.RecyclerView
+import com.bumptech.glide.Glide
 import com.example.labslocaliza.databinding.MovieItemBinding
+import com.example.labslocaliza.model.MovieModel
 
 class MoviesViewHolder(val binding: MovieItemBinding) : RecyclerView.ViewHolder(binding.root)
 
-class MoviesAdapter(val onMovieClick: () -> Unit) : RecyclerView.Adapter<MoviesViewHolder>() {
-    val movieList: MutableList<String> = mutableListOf()
+class MoviesAdapter(val onMovieClick: (Int) -> Unit) : RecyclerView.Adapter<MoviesViewHolder>() {
+    val movieListActivity: MutableList<MovieModel> = mutableListOf()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MoviesViewHolder {
         val inflater = LayoutInflater.from(parent.context)
@@ -17,22 +19,20 @@ class MoviesAdapter(val onMovieClick: () -> Unit) : RecyclerView.Adapter<MoviesV
     }
 
     override fun onBindViewHolder(holder: MoviesViewHolder, position: Int) {
-        val item = movieList.get(position)
-        // holder.binding.tituloFavoritos.text = item
-        holder.binding.laCasaDePapelId.setOnClickListener { onMovieClick() }
+        val item = movieListActivity[position]
+        Glide.with(holder.binding.root)
+            .load("https://image.tmdb.org/t/p/w500${item.poster_path}")
+            .into(holder.binding.posterId)
+        holder.binding.posterId.setOnClickListener { onMovieClick(item.id) }
     }
 
     override fun getItemCount(): Int {
-        return movieList.size
+        return movieListActivity.size
     }
 
-    fun addItemList(list: List<String>) {
-        movieList.clear()
-        movieList.addAll(list)
+    fun addItemList(list: List<MovieModel>) {
+        movieListActivity.clear()
+        movieListActivity.addAll(list)
         notifyDataSetChanged()
-
-
     }
-
-
 }

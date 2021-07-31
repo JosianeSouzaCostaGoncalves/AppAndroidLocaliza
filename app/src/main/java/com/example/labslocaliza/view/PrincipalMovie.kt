@@ -17,7 +17,7 @@ class PrincipalMovie : AppCompatActivity() {
     }
 
     fun pula() {
-        val pulaTelaPrincipal = Intent(this, MovieList::class.java)
+        val pulaTelaPrincipal = Intent(this, MovieListActivity::class.java)
         startActivity(pulaTelaPrincipal)
     }
 
