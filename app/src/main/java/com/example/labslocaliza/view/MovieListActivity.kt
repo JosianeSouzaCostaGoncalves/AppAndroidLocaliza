@@ -8,6 +8,9 @@ import com.example.labslocaliza.model.MovieRepository
 
 class MovieListActivity : AppCompatActivity() {
     private lateinit var binding: ActivityMovieListBinding
+    companion object{
+        const val ID_MOVIE = "com.example.labslocaliza.view.MovieListActivity.ID_MOVIE"
+    }
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -15,8 +18,8 @@ class MovieListActivity : AppCompatActivity() {
         setContentView(binding.root)
 
         val adapter = MoviesAdapter() { id ->
-            val pulaTela = Intent(this, MainActivity::class.java)
-            intent.putExtra("id_api", id)
+            val pulaTela = Intent(this, DetalhesMovieActivity::class.java)
+            pulaTela.putExtra(ID_MOVIE, id)
             startActivity(pulaTela)
         }
         binding.movie.adapter = adapter

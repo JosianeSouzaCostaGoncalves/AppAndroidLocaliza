@@ -21,14 +21,31 @@ object MovieRepository {
             withContext(Dispatchers.IO) {
                 val callApi = moviesApi.listPopular()
                 callApi.enqueue(object : Callback<ListPaginadaMovie> {
-                    override fun onResponse(
-                        call: Call<ListPaginadaMovie>,
-                        response: Response<ListPaginadaMovie>
-                    ) {
+                    override fun onResponse(call: Call<ListPaginadaMovie>, response: Response<ListPaginadaMovie>) {
                         callback(response.body()?.results ?: mutableListOf())
                     }
 
                     override fun onFailure(call: Call<ListPaginadaMovie>, t: Throwable) {
+                    }
+                })
+            }
+        }
+    }
+
+    fun getMovieDetalhes(callback: (MovieModel) -> Unit, id: Int) {
+        CoroutineScope(GlobalScope.coroutineContext).launch(Dispatchers.Main) {
+            withContext(Dispatchers.IO) {
+                val callApi = moviesApi.getMovieById(id)
+
+                callApi.enqueue(object : Callback<MovieModel> {
+                    override fun onResponse(call: Call<MovieModel>, response: Response<MovieModel>) {
+                        response.body()?.let{
+                            callback(it)
+                        }
+
+                    }
+
+                    override fun onFailure(call: Call<MovieModel>, t: Throwable) {
                     }
                 })
             }

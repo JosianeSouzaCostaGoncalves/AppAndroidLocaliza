@@ -10,7 +10,7 @@ import com.example.labslocaliza.model.MovieModel
 class MoviesViewHolder(val binding: MovieItemBinding) : RecyclerView.ViewHolder(binding.root)
 
 class MoviesAdapter(val onMovieClick: (Int) -> Unit) : RecyclerView.Adapter<MoviesViewHolder>() {
-    val movieListActivity: MutableList<MovieModel> = mutableListOf()
+    private val movieListActivity: MutableList<MovieModel> = mutableListOf()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MoviesViewHolder {
         val inflater = LayoutInflater.from(parent.context)

@@ -6,7 +6,7 @@ import  androidx.appcompat.app.AppCompatActivity
 import com.example.labslocaliza.databinding.PrincipalMovieBinding
 
 
-class PrincipalMovie : AppCompatActivity() {
+class PrincipalMovieActivity : AppCompatActivity() {
     private lateinit var binding: PrincipalMovieBinding
 
     override fun onCreate(savedInstanceState: Bundle?) {

@@ -12,9 +12,9 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/Theme.LabsLocaliza">
-        <activity android:name=".view.MainActivity" />
+        <activity android:name=".view.DetalhesMovieActivity" />
         <activity android:name=".view.MovieListActivity"/>
-        <activity android:name=".view.PrincipalMovie">
+        <activity android:name=".view.PrincipalMovieActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
