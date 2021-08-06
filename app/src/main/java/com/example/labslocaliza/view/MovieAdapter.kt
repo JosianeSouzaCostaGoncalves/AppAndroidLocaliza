@@ -6,10 +6,15 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.labslocaliza.databinding.MovieItemBinding
 import com.example.labslocaliza.model.MovieModel
+import kotlinx.coroutines.flow.callbackFlow
 
 class MoviesViewHolder(val binding: MovieItemBinding) : RecyclerView.ViewHolder(binding.root)
 
-class MoviesAdapter(val onMovieClick: (Int) -> Unit) : RecyclerView.Adapter<MoviesViewHolder>() {
+class MoviesAdapter(
+    val onMovieClick: (Int) -> Unit,
+    val bootomFavoriteCallback: (MovieModel, Boolean) -> Unit
+) :
+    RecyclerView.Adapter<MoviesViewHolder>() {
     private val movieListActivity: MutableList<MovieModel> = mutableListOf()
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): MoviesViewHolder {
@@ -24,7 +29,13 @@ class MoviesAdapter(val onMovieClick: (Int) -> Unit) : RecyclerView.Adapter<Movi
             .load("https://image.tmdb.org/t/p/w500${item.poster_path}")
             .into(holder.binding.posterId)
         holder.binding.posterId.setOnClickListener { onMovieClick(item.id) }
+        holder.binding.favoriteIcon.isChecked = item.is_favorite
+
+        holder.binding.favoriteIcon.setOnCheckedChangeListener { buttonView, isChecked ->
+            bootomFavoriteCallback(item, isChecked)
+        }
     }
+
 
     override fun getItemCount(): Int {
         return movieListActivity.size
