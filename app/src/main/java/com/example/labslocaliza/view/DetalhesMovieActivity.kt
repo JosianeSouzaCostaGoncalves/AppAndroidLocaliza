@@ -26,6 +26,7 @@ class DetalhesMovieActivity : AppCompatActivity() {
             binding.anoId.text = it.release_date.take(4)
             binding.classificacaoId.text = if (it.adult) "+18" else "-18"
             binding.generoId.text = "Gênero: ${it.genres.toString()} "
+            binding.duracaoId.text = "${it.runtime} min"
             Glide.with(binding.root)
                 .load("https://image.tmdb.org/t/p/w500${it.poster_path}")
                 .into(binding.posterId)
@@ -34,7 +35,6 @@ class DetalhesMovieActivity : AppCompatActivity() {
 
 //        MovieRepository.getMovieVideo({
 //
-//            println("Josiane"+ it.size)
 //
 //        }, idMovieDetalhes)
     }

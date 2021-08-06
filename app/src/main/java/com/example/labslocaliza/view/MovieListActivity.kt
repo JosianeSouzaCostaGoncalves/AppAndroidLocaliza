@@ -35,12 +35,13 @@ class MovieListActivity : AppCompatActivity() {
        callPopular()
 
         binding.favoriteBt.setOnClickListener { callFavorite() }
-//        binding.fkkkkkBt.setOnClickListener { callPopular() }
+        binding.popularBt.setOnClickListener { callPopular() }
     }
     private fun callPopular(){
         MovieRepository.getPopular { list ->
             adapterMovies.addItemList(list)
             binding.favoriteBt.visibility = View.VISIBLE
+            binding.popularBt.visibility = View.GONE
         }
     }
 
@@ -49,7 +50,7 @@ class MovieListActivity : AppCompatActivity() {
     private fun callFavorite() {
         MovieRepository.getFavoritos(this) { list ->
             adapterMovies.addItemList(list)
-
+            binding.popularBt.visibility = View.VISIBLE
         }
     }
 }

@@ -12,6 +12,27 @@
         android:layout_height="match_parent"
         android:background="@color/pink">
 
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/icone_id"
+            android:layout_width="150dp"
+            android:layout_height="150dp"
+            android:layout_marginTop="20dp"
+            android:scaleType="fitXY"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:srcCompat="@drawable/icone_principal" />
+
+        <androidx.appcompat.widget.AppCompatImageView
+            android:id="@+id/looking_id"
+            android:layout_width="match_parent"
+            android:layout_height="180dp"
+            android:scaleType="fitXY"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/icone_id"
+            app:srcCompat="@drawable/looking_the_movie" />
+
 
 
         <androidx.appcompat.widget.AppCompatButton
